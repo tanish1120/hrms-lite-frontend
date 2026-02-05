@@ -18,7 +18,6 @@ export default function Employees() {
       const summaryRes = await api.get("/attendance/summary");
       const perEmp = summaryRes.data.per_employee || [];
 
-      // Merge counts into employee objects
       const merged = employeesData.map((emp) => {
         const s = perEmp.find((p) => p.id === emp.id) || {};
         return {

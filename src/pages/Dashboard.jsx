@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { api } from "../api";
 
 export default function Dashboard() {
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(false);
 

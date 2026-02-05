@@ -4,12 +4,11 @@ export const api = axios.create({
   baseURL: "https://hrms-lite-backend-yz3g.onrender.com/",
 });
 
-// Normalize error responses (e.g. FastAPI / Pydantic validation errors)
+// Normalize error responses
 export function getErrorMessage(err) {
   const detail = err?.response?.data?.detail;
 
   if (Array.isArray(detail)) {
-    // Only return human-friendly messages (avoid exposing internal locations like "body > email")
     return detail
       .map((d) => d?.msg || (typeof d === "string" ? d : JSON.stringify(d)))
       .join(" | ");

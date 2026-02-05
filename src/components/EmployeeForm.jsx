@@ -35,11 +35,9 @@ export default function EmployeeForm({ refresh }) {
           }
         });
         setFieldErrors(fe);
-        // Show a friendly top-level hint instead of the technical "body > email" message
         setError("Please correct the highlighted fields.");
       } else {
         const msg = getErrorMessage(err);
-        // Map common server-side duplicate email message to field error
         if (typeof msg === "string" && msg.toLowerCase().includes("email") && msg.toLowerCase().includes("exist")) {
           setFieldErrors({ email: msg });
           setError("Please correct the highlighted fields.");
