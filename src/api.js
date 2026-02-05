@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 export const api = axios.create({
-  baseURL: BASE,
+  baseURL: "https://hrms-lite-backend-yz3g.onrender.com/",
 });
 
 // Normalize error responses (e.g. FastAPI / Pydantic validation errors)
