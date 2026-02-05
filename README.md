@@ -1,16 +1,47 @@
-# React + Vite
+# HRMS Lite — Frontend ✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project overview
+A lightweight React frontend for HRMS Lite. Built with Vite and Tailwind CSS, it provides pages to view employees, attendance, and employee details, and it calls the HRMS Lite backend API to fetch and mutate data.
 
-Currently, two official plugins are available:
+## Tech stack
+- **Framework:** React (via Vite)
+- **Styling:** Tailwind CSS + PostCSS
+- **HTTP client:** Axios
+- **Dev tooling:** Vite, ESLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local setup & run
+1. Ensure Node.js and npm are installed (Node 18+ recommended). ⚠️
+2. From the repository root run:
+   ```bash
+   cd frontend
+   npm install
+   ```
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+   The app will open at `http://localhost:5173` (or as printed by Vite).
 
-## React Compiler
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+5. Preview the production build locally:
+   ```bash
+   npm run preview
+   ```
+6. Lint the codebase:
+   ```bash
+   npm run lint
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Notes about API endpoint
+- The app uses `src/api.js` to configure the API base URL. By default it points to the deployed backend: `https://hrms-lite-backend-yz3g.onrender.com/`.
+- For local backend testing, change `baseURL` in `src/api.js` to `http://localhost:8000/`.
 
-## Expanding the ESLint configuration
+## Assumptions & limitations
+- The frontend expects the backend to provide the documented REST endpoints (no runtime schema discovery).
+- No client-side authentication implemented. Only one admin exists.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
