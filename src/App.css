@@ -1,0 +1,56 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #6366f1;
+}
+
+.dark {
+  --bg: #071027;
+  --card: #071936;
+  --text: #e6eef8;
+  --muted: #93a0b0;
+  --accent: #7c3aed;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeInUp 240ms ease-out;
+}
+
+/* Modal backdrop subtle blur */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile nav menu animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu {
+  animation: slideDown 160ms ease-out;
+}
